@@ -6,6 +6,7 @@
     <!-- Setting default value for username, password and session id properties to empty string 
          so unset values are treated as empty. Without this, ant expressions such as ${sf.username}
          will be treated literally.
+		 Put a star here not sure
     -->
     <condition property="sf.username" value=""> <not> <isset property="sf.username"/> </not> </condition>
     <condition property="sf.password" value=""> <not> <isset property="sf.password"/> </not> </condition>
@@ -104,7 +105,7 @@
 	  <sf:cancelDeploy  username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" requestId="${sf.requestId}"/>
 	</target>
 
-	<!-- Retrieve the information of all items of a particular metadata type -->
+	<!-- Retrieve all the  information of all items of a particular metadata type -->
     <target name="listMetadata">
       <sf:listMetadata username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" metadataType="CustomObject" resultFilePath="describeMetadata/describe.log" />
     </target>
